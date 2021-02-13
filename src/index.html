@@ -39,7 +39,8 @@
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-            > ...
+            >
+              ...
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item _js-menu--link" href="#">...</a>
@@ -47,7 +48,6 @@
               <a class="dropdown-item _js-menu--link" href="#">...</a>
             </div>
           </li>
-
           <li class="nav-item active">
             <a class="nav-link _js-menu--link1" href="#">...</a>
           </li>
@@ -69,7 +69,7 @@
 
     <!-- start cards -->
 
-    <div class="container">
+    <div class="container pb-5">
       <div class="d-flex justify-content-between py-5 cards-wrapper">
         <div class="card text-center py-4 bg-red-900" style="width: 18rem">
           <div class="card-body">
@@ -103,7 +103,9 @@
             <th scope="col" rowspan="2">column 1</th>
             <th scope="col" rowspan="2">column 2</th>
             <th scope="col" rowspan="2">column 3</th>
-            <th scope="col" colspan="3" class="border-bottom-0">column group</th>
+            <th scope="col" colspan="3" class="border-bottom-0">
+              column group
+            </th>
           </tr>
           <tr>
             <th scope="col">column 4</th>
@@ -184,9 +186,205 @@
           </tr>
         </tbody>
       </table>
-    </div>
+      <!-- end table -->
+      <!-- start pic-toggle -->
+      <div class="d-flex flex-row mt-5">
+        <img
+          class="rounded-circle mr-5 img-size"
+          src="./assets/images/slika.png"
+          alt=""
+        />
+        <div>
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link"
+                    data-toggle="collapse"
+                    data-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Toggle #1
+                  </button>
+                </h5>
+              </div>
 
-    <!-- end table -->
+              <div
+                id="collapseOne"
+                class="collapse show"
+                aria-labelledby="headingOne"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life
+                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                  non cupidatat skateboard dolor brunch. Food truck quinoa
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    Toggle #2
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapseTwo"
+                class="collapse"
+                aria-labelledby="headingTwo"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life
+                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                  non cupidatat skateboard dolor brunch. Food truck quinoa
+                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Toggle #3
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapseThree"
+                class="collapse"
+                aria-labelledby="headingThree"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life
+                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                  non cupidatat skateboard dolor brunch. Food truck quinoa
+                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end pic-toggle -->
+
+      <!-- start headlines -->
+      <div class="d-flex flex-row mt-5">
+        <div class="mr-5">
+          <h3>Headline 3</h3>
+          <p>
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form, by injected
+            humour, or randomised words which don't look even slightly
+            believable. If you are going to use a passage of Lorem Ipsum, you
+            need to be sure there isn't anything embarrassing hidden in the
+            middle of text. All the Lorem Ipsum generators on the Internet tend
+            to repeat predefined chunks as necessary, making this the first true
+            generator on the Internet. It uses a dictionary of over 200 Latin
+            words, combined with a handful of model sentence structures, to
+            generate Lorem Ipsum which looks reasonable. The generated Lorem
+            Ipsum is therefore always free from repetition, injected humour, or
+            non-characteristic words etc.
+          </p>
+        </div>
+        <div>
+          <h3>Headline 3</h3>
+          <p>
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters, as opposed to using 'Content here, content
+            here', making it look like readable English. Many desktop publishing
+            packages and web page editors now use Lorem Ipsum as their default
+            model text, and a search for 'lorem ipsum' will uncover many web
+            sites still in their infancy. Various versions have evolved over the
+            years, sometimes by accident, sometimes on purpose (injected humour
+            and the like).
+          </p>
+        </div>
+      </div>
+      <!-- end headlines -->
+
+      <!-- start form -->
+      <div class="d-flex flex-column mt-5 mx-5">
+        <h4>Headline 4</h4>
+        <p>Contact us if you have any questions.</p>
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Subject</label>
+            <input class="form-control" id="exampleFormControlInput1" />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            ></textarea>
+          </div>
+          <button type="button" class="btn btn-success float-right">
+            Success
+          </button>
+        </form>
+      </div>
+      <!-- end form -->
+    </div>
+    <!-- start footer -->
+    <footer class="bg-secondary footer-size">
+      <div class="container d-flex flex-row justify-content-between pt-5">
+        <img
+          class="h-25 d-inline-block"
+          src="./assets/images/logo.png"
+          alt=""
+        />
+        <div class="text-white">
+          <p>Lorem Ipsum Dolor Sit</p>
+          <p>Lorem Ipsum Dolor Sit</p>
+          <p>Lorem Ipsum Dolor Sit</p>
+          <p>Amet</p>
+        </div>
+        <div>
+          <p>subscribe for newsletter</p>
+          <input
+            class="form-control"
+            type="email"
+            id="exampleFormControlInput1"
+            placeholder="name@example.com"
+          />
+          <button type="button" class="btn btn-warning">Subscribe</button>
+        </div>
+        <a class="navbar-brand" href="#">
+          <i class="fab fa-bootstrap"></i>
+        </a>
+      </div>
+    </footer>
+    <!-- end footer -->
 
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:100,300"

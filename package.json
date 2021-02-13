@@ -58,6 +58,7 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "axios": "^0.19.2",
     "bootstrap": "^4.6.0",
     "fs-extra": "^9.0.1",
