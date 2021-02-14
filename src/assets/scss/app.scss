@@ -23,7 +23,7 @@
   .card {
     width: 100%;
     @media (min-width: 768px) {
-        width: 18rem;
+      width: 18rem;
     }
     border-radius: 0;
     .card-title {
@@ -57,13 +57,19 @@
         color: $color;
         background-color: lighten($color, 40%);
         i {
-            transform: rotate(180deg);
+          transform: rotate(180deg);
         }
       }
     }
     .card-body {
-        font-weight: 600;
+      font-weight: 600;
     }
+  }
+}
+
+form {
+  label {
+    font-weight: 600;
   }
 }
 
@@ -73,16 +79,26 @@ footer {
   }
 
   .input-size {
+    width: 280px;
     @media (min-width: 992px) {
-        width: 400px;
+      width: 400px;
     }
   }
 
   img.logo {
-      width: 130px;
-      @media (min-width: 992px) {
-        height: 25%;
-        width: auto;
-      }
+    width: 130px;
+    @media (min-width: 992px) {
+      height: 25%;
+      width: auto;
+    }
+  }
+
+  button {
+    max-width: 100px;
+  }
+
+  i {
+    font-size: 150px;
+    color: white;
   }
 }

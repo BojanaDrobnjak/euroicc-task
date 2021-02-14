@@ -1,15 +1,12 @@
 {
-  "name": "@jr-cologne/create-gulp-starter-kit",
+  "name": "euroicc-task",
   "version": "0.11.0-beta",
-  "description": "A simple Gulp 4 Starter Kit for modern web development.",
+  "description": "Frontend developer task.",
   "keywords": [
     "gulp",
     "gulp-starter-kit",
     "sass",
     "scss",
-    "less",
-    "stylus",
-    "pug",
     "babel",
     "browser-sync",
     "autoprefixer",
@@ -23,19 +20,6 @@
     "start": "gulp",
     "build": "gulp build"
   },
-  "bin": {
-    "create-gulp-starter-kit": "./bin/install.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jr-cologne/gulp-starter-kit.git"
-  },
-  "author": "JR Cologne",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jr-cologne/gulp-starter-kit/issues"
-  },
-  "homepage": "https://github.com/jr-cologne/gulp-starter-kit",
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
