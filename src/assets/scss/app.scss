@@ -8,44 +8,81 @@
 }
 
 .bg-red-900 {
-    background-color: #b71c1c;
+  background-color: #b71c1c;
 }
 
 .bg-grey-700 {
-    background-color: #616161;
+  background-color: #616161;
 }
 
 .bg-amber-600 {
-    background-color: #ffb300;
+  background-color: #ffb300;
 }
 
 .cards-wrapper {
-    .card {
-        border-radius: 0;
-        .card-title {
-            color: white;
-        }
+  .card {
+    width: 100%;
+    @media (min-width: 768px) {
+        width: 18rem;
     }
+    border-radius: 0;
+    .card-title {
+      color: white;
+    }
+  }
 }
 
 .table {
-    thead {
-        tr {
-            th {
-                vertical-align: middle;
-                text-align: center;
-                text-transform: uppercase;
-                font-weight: bold;
-            }
-        }
+  thead {
+    tr {
+      th {
+        vertical-align: middle;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
     }
+  }
 }
 
-.img-size {
-    width: 250px;
-    height: 250px;
+.accordion {
+  .card {
+    .card-header {
+      cursor: pointer;
+      h5 {
+        font-size: 1rem;
+      }
+      &:not(.collapsed) {
+        $color: #007bff;
+        color: $color;
+        background-color: lighten($color, 40%);
+        i {
+            transform: rotate(180deg);
+        }
+      }
+    }
+    .card-body {
+        font-weight: 600;
+    }
+  }
 }
 
-.footer-size {
+footer {
+  .footer-size {
     height: auto;
+  }
+
+  .input-size {
+    @media (min-width: 992px) {
+        width: 400px;
+    }
+  }
+
+  img.logo {
+      width: 130px;
+      @media (min-width: 992px) {
+        height: 25%;
+        width: auto;
+      }
+  }
 }
