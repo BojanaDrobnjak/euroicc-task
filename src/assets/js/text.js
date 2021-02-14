@@ -12,93 +12,55 @@ export class Main {
 }
 
 export class Table {
-  insertTableData(json) {
-    const data = json.columns.table_content.rows.row;
-    Object.keys(data).forEach((key) => {
-      Object.keys(data[key]).forEach((el) => {
-        const $elements = document.getElementsByClassName(
-          `_js-table_content--rows--row${key}--${el}`
-        );
-        Array.from($elements).forEach(($el) => {
-          $el.innerHTML = data[key][el]._text;
-        });
-      });
-    });
+  createTable(json) {
+    const $tableContainer = document.getElementById("table-container");
+    const headData = json.table_head;
+    const contentData = json.table_content;
+    const totalData = json.table_total;
+    const table = `
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th scope="col" rowspan="2">${headData.column_group1._text}</th>
+        <th scope="col" rowspan="2">${headData.column_group2._text}</th>
+        <th scope="col" rowspan="2">${headData.column_group3._text}</th>
+        <th scope="col" colspan="3" class="border-bottom-0">${headData.column_group._text}</th>
+      </tr>
+      <tr>
+        <th scope="col">${headData.column_group4._text}</th>
+        <th scope="col">${headData.column_group5._text}</th>
+        <th scope="col">${headData.column_group6._text}</th>
+      </tr>
+      </thead>
+      <tbody>
+        ${this.getTableContent(contentData)}
+        ${this.getTableTotal(totalData)}
+      </tbody>
+    </table>`;
+    $tableContainer.innerHTML = table;
   }
-
-  createTable() {
-    let tableDiv = document.getElementById("table-container");
-
-    let table = document.createElement("table");
-    table.classList.add("table", "table-striped", "table-bordered");
-
-    let tableHead = document.createElement("thead");
-    table.appendChild(tableHead);
-
-    let headRowFirst = document.createElement("tr");
-    var counter = 0;
-    for (let i = 0; i < 4; i++) {
-      let th = document.createElement("th");
-      let text = document.createTextNode("...");
-      th.appendChild(text);
-      th.scope = "col";
-      if (i < 3) {
-        th.rowSpan = "2";
-        th.className = `_js-table_head--column_group${++counter}`;
-      } else {
-        th.colSpan = "3";
-        th.className = `_js-table_head--column_group`;
-        th.classList.add("border-bottom-0");
-      }
-      headRowFirst.appendChild(th);
-    }
-    let headRowSecond = document.createElement("tr");
-    for (let j = 0; j < 3; j++) {
-      let th = document.createElement("th");
-      th.className = `_js-table_head--column_group${++counter}`;
-      let text = document.createTextNode("...");
-      th.appendChild(text);
-      th.scope = "col";
-      headRowSecond.appendChild(th);
-    }
-    tableHead.appendChild(headRowFirst);
-    tableHead.appendChild(headRowSecond);
-
-    counter = 0;
-
-    let tableBody = document.createElement("tbody");
-    table.appendChild(tableBody);
-
-    for (let i = 0; i < 9; i++) {
-      let tr = document.createElement("tr");
-      tableBody.appendChild(tr);
-      if (i < 8) {
-        for (let j = 0; j < 6; j++) {
-          let td = document.createElement("td");
-          td.className = `_js-table_content--rows--row${i}--value${++counter}`;
-          td.appendChild(document.createTextNode("... "));
-          tr.appendChild(td);
-        }
-      } else {
-        counter = 0;
-        let td = document.createElement("td");
-        td.colSpan = "3";
-        td.classList.add(
-          "font-weight-bold",
-          "text-right",
-          "_js-table_total--total"
-        );
-        td.appendChild(document.createTextNode("..."));
-        tr.appendChild(td);
-        for (let k = 1; k < 4; k++) {
-          let td = document.createElement("td");
-          td.className = `_js-table_total--value${++counter}`;
-          td.appendChild(document.createTextNode("..."));
-          tr.appendChild(td);
-        }
-      }
-      counter = 0;
-    }
-    tableDiv.appendChild(table);
+  getTableContent(data) {
+    return data.rows.row.map(row => {
+      return `
+      <tr>
+        <td>${row.value1._text}</td>
+        <td>${row.value2._text}</td>
+        <td>${row.value3._text}</td>
+        <td>${row.value4._text}</td>
+        <td>${row.value5._text}</td>
+        <td>${row.value6._text}</td>
+      </tr>
+      `;
+    }).join('');
+  }
+  getTableTotal(data) {
+    return `
+    <tr>
+      <td colspan="3" class="font-weight-bold text-right">${data.total._text}</td>
+      <td>${data.value1._text}</td>
+      <td>${data.value2._text}</td>
+      <td>${data.value3._text}</td>
+    </tr>
+    `;
   }
 }
